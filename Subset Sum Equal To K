@@ -1,0 +1,57 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int helper(int i ,int n, int k , int arr[] , int[][]dp)
+    {
+        
+        if(k==0) return 1;
+        if(k<0 ||  i==n) return 0 ;
+        
+        if(dp[i][k]!=-1) return dp[i][k];
+        int v1= helper(i+1 , n , k-arr[i], arr,dp);
+        int v2= helper(i+1, n,k,arr,dp);
+        //return helper(i+1 , n , k-arr[i], arr) || helper(i+1, n,k,arr);
+        dp[i][k]=(v1==1 || v2==1)?1:0;
+        return (v1==1 || v2==1)?1:0;
+    }
+    public static boolean subsetSumToK(int n, int k, int arr[]){
+        
+        
+        boolean dp[][]= new boolean[n][k+1];
+        
+        for(int i=0;i<n;i++)
+        {
+            dp[i][0]=true;
+          
+        }
+        boolean ans=false;
+        if(arr[0]<=k)
+        dp[0][arr[0]]=true;
+        
+        for(int i=1;i<n;i++)
+        {
+            for(int j=1;j<=k;j++)
+            {
+                boolean b1,b2;
+                b1=false;
+                if(j >=arr[i])
+                {
+                    b1 = (dp[i-1][j-arr[i]]);
+                }
+                b2= dp[i-1][j];
+                
+                dp[i][j]= b1||b2;
+                if(j==k &&dp[i][j]==true) return true;
+                
+                
+                
+            }
+            
+           
+        }
+        
+         return dp[n-1][k];
+        
+        
+    }
+}
