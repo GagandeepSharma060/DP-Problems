@@ -1,0 +1,5 @@
+In DP of strings (matching , regex ,Edit distance) , use 1 based indexing (dp[n+1][m+1])and the base case should be when any one string gets exhausted. (i==0,j==0)
+
+Base case in subsequeces , when i==0 and sometimes when j==0
+
+When infinite supply or insertion , i will not change (coin change , Edit distance (Ins , Del , Rep) 
