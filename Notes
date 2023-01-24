@@ -3,3 +3,7 @@ In DP of strings (matching , regex ,Edit distance) , use 1 based indexing (dp[n+
 Base case in subsequeces , when i==0 and sometimes when j==0
 
 When infinite supply or insertion , i will not change (coin change , Edit distance (Ins , Del , Rep) 
+
+In dp on stocks (buy and seel stocks)
+
+if( thre is a limit on number of transations , then it will be a 3D array dp[inx][buy/sell (0,1)][cap]  (idx n-1 to 0, and cap from cap tp 0 , opposite to that of Recursion)
