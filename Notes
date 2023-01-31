@@ -7,3 +7,5 @@ When infinite supply or insertion , i will not change (coin change , Edit distan
 In dp on stocks (buy and seel stocks)
 
 if( thre is a limit on number of transations , then it will be a 3D array dp[inx][buy/sell (0,1)][cap]  (idx n-1 to 0, and cap from cap tp 0 , opposite to that of Recursion)
+
+Unique parths from start to end can be done using reccuriom , dp or even combinations, where in a matrix of n8m totaln-1 and m-1 steps so. n+m-2 C n-1 is the answer
